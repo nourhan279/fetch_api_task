@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <section class="products">
@@ -13,10 +17,50 @@
           <h1>Products</h1>
           <h2>Our Products</h2>
           <p>Have a good setup for your minimalist home</p>
+          <button
+            type="button"
+            onclick="document.getElementById('form').scrollIntoView()"
+          >
+            Add Product
+          </button>
         </div>
+        <div class="loader d-none"></div>
         <div id="products__cards"></div>
       </div>
     </section>
-    <script src="script.js"></script>
+
+    <section class="form">
+      <div class="container">
+        <form id="form">
+          <div>
+            <label for="id">Product Id</label>
+            <input type="number" name="id" />
+          </div>
+          <div>
+            <label for="title">Product Title</label>
+            <input type="text" name="title" />
+          </div>
+          <div>
+            <label for="price">Product Price</label>
+            <input type="number" step="any" name="price" />
+          </div>
+          <div>
+            <label for="description">Product Description</label>
+            <textarea type="text" name="description"></textarea>
+          </div>
+          <div>
+            <label for="category">Product category</label>
+            <input type="text" name="category" />
+          </div>
+          <div>
+            <label for="image">Product image</label>
+            <input type="url" name="image" />
+          </div>
+          <button id="add_button">Add</button>
+          <button type="button" id="edit_button" class="d-none">Edit</button>
+        </form>
+      </div>
+    </section>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
